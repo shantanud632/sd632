@@ -1,0 +1,28 @@
+#include <iostream>
+#include <climits>
+
+using namespace std;
+long long kadane(int arr[],int n)
+{
+    int currsum=0;
+    int maxsum=0;
+    for(int i=0;i<n;i++)
+    {
+        currsum=currsum+arr[i];
+        maxsum=max(maxsum,currsum);
+        if(currsum<0)
+        currsum=0;
+        
+    }
+    return maxsum;
+    
+    
+}
+
+int main()
+{
+    int arr1[]={5,-7,3,-1,6,-2,-4,9};
+    int n=sizeof(arr1)/sizeof(int);
+    kadane(arr1,n);
+    
+}
