@@ -1,0 +1,25 @@
+int flipBits(int* arr, int n) 
+{
+   int maxvalue=0;
+    int total_1=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==1)
+            total_1++;
+        int count1=0;
+        int count0=0;
+        for(int j=i;j<n;j++)
+        {
+            if(arr[j]==1)
+                count1++;
+            else
+                count0++;
+            maxvalue=max(maxvalue,count0-count1);
+        }
+        
+        
+    }
+    int result=total_1+maxvalue;
+    return result;
+    
+}
